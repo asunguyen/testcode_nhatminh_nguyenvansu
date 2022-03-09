@@ -1,0 +1,156 @@
+<div class="dashboard">
+    <div class="nav__bar">
+        <div class="logo">
+            <img src="@/app_assets/img/logo.png">
+        </div>
+        <div class="view__stall">
+            <div class="view__world">
+                <div class="icon">
+                    <img src="@/app_assets/img/icon-wrold.png">
+                </div>
+                <div class="title">Xem gian hàng</div>
+            </div>
+            <div class="noti">
+                <div class="icon">
+                    <img src="@/app_assets/img/icon-noti.png">
+                </div>
+                <div class="noti__dot"></div>
+            </div>
+        </div>
+        <div class="wallet">
+            <div>
+                <span>Số dư</span>
+                <label>Ví BZI</label>
+            </div>
+            <div>
+                <div class="icon">
+                    Đ
+                </div>
+                <div class="title">10,660,800</div>
+            </div>
+        </div>
+        <div class="item__info">
+            <div class="icon">
+                <img src="@/app_assets/img/icon-people.png">
+            </div>
+            <div class="title">Nguyễn Văn Bill</div>
+            <div class="icon__menu__down">
+                <img src="@/app_assets/img/icon-down.png">
+            </div>
+        </div>
+    </div>
+    <div class="left__bar">
+        <ul>
+            <li>
+                <div class="icon">
+                    <img src="@/app_assets/img/home.png">
+                </div>
+                <div class="title">Kho BZI</div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="@/app_assets/img/icon-kho.png">
+                </div>
+                <div class="title">Kho của bạn</div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="@/app_assets/img/icon-baocao.png">
+                </div>
+                <div class="title">Báo cáo</div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="@/app_assets/img/icon-khachhang.png">
+                </div>
+                <div class="title">Khách hàng</div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="@/app_assets/img/icon-giohang.png">
+                </div>
+                <div class="title">Đơn hàng</div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="@/app_assets/img/icon-chucnang.png">
+                </div>
+                <div class="title">Chức năng</div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="@/app_assets/img/icon-cuahang.png">
+                </div>
+                <div class="title">Cửa hàng</div>
+            </li>
+        </ul>
+    </div>
+    <div class="main__dashboard">
+        <div class="trade">
+            <div class="title__wallet">
+                <span>Ví BZI</span>
+                <label>Ví BZI</label>
+            </div>
+            <div class="search">
+                <input placeholder="Nhập mã giao dịch bạn muốn tìm">
+                <img class="icon__search" src="@/app_assets/img/icon-search.png">
+            </div>
+            <div class="info__trade">
+                <div class="info__wallet">
+                    <label>Ví BZI</label>
+                    <div class="card">
+
+                    </div>
+
+                </div>
+                <div class="list__trade">
+                    <div class="status">
+                        <div class="item__status active">Tất cả</div>
+                        <div class="item__status">Đang xử lý</div>
+                        <div class="item__status">Thành công</div>
+                        <div class="item__status">Thất bại</div>
+                    </div>
+                    <div class="table">
+                        <ul>
+                            <li class="head__table">
+                                <div class="stt">STT</div>
+                                <div class="type__trade">Loại hình giao dịch</div>
+                                <div class="date__create">Ngày khởi tạo</div>
+                                <div class="all__trade">Tổng giao dịch</div>
+                                <div class="status__trade">Trạng thái</div>
+                                <div class="action">Hành động</div>
+                            </li>
+                            <li v-for="(item, index) in datav">
+                                <div class="stt">{{index + 1}}</div>
+                                <div class="type__trade">
+                                    <div class="icon">
+                                        <img src="@/app_assets/img/icon-dep.png" v-if="item.type == '1'">
+                                        <img src="@/app_assets/img/icon-bonus.png" v-if="item.type == '2'">
+                                        <img src="@/app_assets/img/icon-wit.png" v-if="item.type == '3'">
+                                        <img src="@/app_assets/img/icon-ttbzi.png" v-if="item.type == '4'">
+                                    </div>
+                                    <div class="title">
+                                        <div v-if="item.type == '1'">Nạp tiền vào ví</div>
+                                        <div v-if="item.type == '2'">Hoa hồng BZI</div>
+                                        <div v-if="item.type == '3'">Rút tiền khỏi ví</div>
+                                        <div v-if="item.type == '4'">Thanh toán BZI</div>
+                                        <div>{{item.code}}</div>
+                                    </div>
+                                </div>
+                                <div class="date__create">{{item.date_create}}</div>
+                                <div class="all__trade">{{all_trade}}</div>
+                                <div class="status__trade">
+                                    <div class="btn__content btn__content--thanh--cong" v-if="item.status == 'thanh_cong'">Thành công</div>
+                                    <div class="btn__content btn__content--that--bai" v-if="item.status == 'that_bai'">Thất bại</div>
+                                    <div class="btn__content btn__content--dang--xu--ly" v-if="item.status == 'dang_xu_ly'">Đang xử lý</div>
+                                </div>
+                                <div class="action">Xem chi tiết</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

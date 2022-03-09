@@ -1,0 +1,346 @@
+.dashboard{
+    font-family: Inter;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    float: left;
+    .nav__bar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        box-shadow: 0 0 1px #C7C9D9;
+        height: 71px;
+        width: 100%;
+        box-sizing: border-box;
+        background: #ffffff;
+        .logo{
+            height: 47px;
+            width: 148px;
+            float: left;
+            box-sizing: border-box;
+            padding: 12px 24px;
+        }
+        .view__stall{
+            width: calc(100% - 520px);
+            float: left;
+            height: 100%;
+            border-left: 1px solid #C7C9D9;
+            border-right: 1px solid #c7C9D9;
+            box-sizing: border-box;
+            padding: 26px;
+            color: #2B79F7;
+            .view__world{
+                .icon{
+                    float: left;
+                    cursor: pointer;
+                }
+                .title{
+                    padding: 2px 10px;
+                    float: left;
+                    cursor: pointer;
+                }
+            }
+            .noti{
+                position: relative;
+                float: right;
+                .noti__dot{
+                    background: $icon-main;
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 8px;
+                    right: 0;
+                    top: 0;
+                }
+            }
+        }
+        .wallet{
+            width: 152px;
+            height: 100%;
+            float: left;
+            line-height: 20px;
+            padding: 12px;
+            box-sizing: border-box;
+            float: left;
+            cursor: pointer;
+            line-height: 25px;
+            background: #F5F6FA;
+            span{
+                float: left;
+                font-size: 12px;
+            }
+            label{
+                float: right;
+                color: #2B79F7;
+                font-size: 12px;
+            }
+            div{
+                width: 100%;
+                float: left;
+                .icon{
+                    margin-top: 4px;
+                    width: 16px;
+                    height: 16px;
+                    float: left;
+                    background: url("~@/app_assets/img/icon-dong.png");
+                    background-repeat: no-repeat;
+                    color: #ffffff;
+                    font-size: 9px;
+                    text-align: center;
+                    line-height: 16px;
+                }
+                .title{
+                    float: right;
+                    width: 78px;
+                }
+            }
+        }
+        .item__info{
+            float: left;
+            border-left: 1px solid #c7C9D9;
+            width: 200px;
+            height: 100%;
+            padding: 24px 0 0 12px;
+            box-sizing: border-box;
+            cursor: pointer;
+            .icon{
+                width: 28px;
+                height: 28px;
+                float: left;
+                margin-top: -4px;
+            }
+            .title{
+                float: left;
+                margin: 0 8px;
+            }
+            .icon__menu__down{
+                width: 12px;
+                height: 8px;
+                float: left;
+            }
+        }
+    }
+    .left__bar{
+        width: 253px;
+        height: calc(100% - 71px);
+        overflow: auto;
+        position: fixed;
+        top: 71px;
+        left: 0;
+        background-color: #ffffff;
+        padding-top: 24px;
+        ul{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            float: left;
+            padding-right: 16px;
+            box-sizing: border-box;
+            li{
+                width: 100%;
+                height: 48px;
+                color: #8F90A6;
+                cursor: pointer;
+                box-sizing: border-box;
+                padding: 13px 30px;
+                &:hover{
+                    border-radius: 0 12px 12px 0;
+                    background: #ed26231a;
+                    color: #ED2623;
+                    font-weight: bold;
+                }
+                .icon{
+                    width: 24px;
+                    height: 24px;
+                    float: left;
+                }
+                .title{
+                    float: left;
+                    line-height: 28px;
+                    padding-left: 24px;
+                }
+            }
+        }
+    }
+    .main__dashboard{
+        width: calc(100% - 253px);
+        height: calc(100% - 71px);
+        position: relative;
+        margin: 71px 0 0 253px;
+        box-sizing: border-box;
+        background: #E5E5E5;
+        overflow: auto;
+        .trade{
+            width: 100%;
+            height: 100%;
+            float: left;
+            box-sizing: border-box;
+            padding: 32px 50px;
+            .title__wallet{
+                width: 100%;
+                float: left;
+                margin-bottom: 24px;
+                span{
+                    font-size: 24px;
+                    color: #000000;
+                    font-weight: bold;
+                    border-right: 1px solid #C7C9D9;
+                    padding-right: 15px;
+                }
+                label{
+                    padding-left: 16px;
+                    font-size: 16px;
+                    color: #F41436;
+                    font-weight: bold;
+                }
+            }
+            .search{
+                width: 100%;
+                position: relative;
+                float: left;
+                margin-bottom: 32px;
+                input{
+                    width: 450px;
+                    height: 45px;
+                    border: 1px solid #C7C9D9;
+                    border-radius: 4px;
+                    padding-left: 34px;
+                }
+                img{
+                    position: absolute;
+                    top: 18px;
+                    left: 12px;
+                }
+            }
+            .info__trade{
+                width: 100%;
+                float: left;
+                margin: 0;
+                padding: 0;
+                .info__wallet{
+                    width: 337px;
+                    height: 433px;
+                    background: #ffffff;
+                    border-radius: 8px;
+                    float: left;
+                }
+                .list__trade{
+                    width: calc(100% - 370px);
+                    float: left;
+                    margin-left: 32px;
+                    .status{
+                        width: 100%;
+                        .item__status{
+                            min-width: 60px;
+                            height: 30px;
+                            border-radius: 8px;
+                            padding: 4px 8px;
+                            box-sizing: border-box;
+                            background: #F9E7E8;
+                            color: #F41436;
+                            font-weight: bold;
+                            max-width: 100px;
+                            text-align: center;
+                            line-height: 21px;
+                            font-size: 14px;
+                            cursor: pointer;
+                            float: left;
+                            margin-right: 8px;
+                            &.active{
+                                color: #ffffff;
+                                background: linear-gradient(180deg, #F41436 0%, #A50000 100%);
+                            }
+                        }
+                    }
+                    .table{
+                        width: 100%;
+                        float: left;
+                        min-height: 300px;
+                        ul{
+                            margin: 0;
+                            padding: 0;
+                            width: 1074px;
+                            overflow: auto;
+                            li{
+                                width: 100%;
+                                background: #ffffff;
+                                margin-bottom: 16px;
+                                padding: 12px;
+                                border-radius: 8px;
+                                box-sizing: border-box;
+                                list-style: none;
+                                text-align: center;
+                                height: 72px;
+                                font-size: 14px;
+                                display: flex;
+                                flex-direction: center;
+                                align-items: center;
+                                &.head__table{
+                                    background: transparent;
+                                    .action{
+                                        color: #000000;
+                                    }
+                                }
+                                div{
+                                    float: left;
+                                    display: flex;
+                                    flex-direction: center;
+                                    align-items: center;
+                                    text-align: center;
+                                }
+                                .stt{
+                                    width: 10%;
+                                }
+                                .type__trade{
+                                    width: 30%;
+                                    .title{
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                    }
+                                }
+                                .date__create{
+                                    width: 20%;
+                                }
+                                .all__trade{
+                                    width: 15%;
+                                }
+                                .status__trade{
+                                    width: 15%;
+                                    .btn__content{
+                                        width: 70px;
+                                        height: 37px;
+                                        border-radius: 8px;
+                                        padding: 8px 16px;
+                                        background: #E3FFF1;
+                                        color: #06C270;
+                                        text-align: center!important;
+                                        &.btn__content--that--bai{
+                                            width: 70px;
+                                            background: #FFE5E5;
+                                            color: #FF3B3B;
+                                        }
+                                        &.btn__content--dang--xu--ly{
+                                            width: 70px;
+                                            background: #FFF8E5;
+                                            color: #FF8800;
+                                        }
+                                    }
+                                }
+                                .action{
+                                    width: 10%;
+                                    color: #2B79F7;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
