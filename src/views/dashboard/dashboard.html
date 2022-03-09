@@ -144,7 +144,7 @@
                                     <div class="btn__content btn__content--that--bai" v-if="item.status == 'that_bai'">Thất bại</div>
                                     <div class="btn__content btn__content--dang--xu--ly" v-if="item.status == 'dang_xu_ly'">Đang xử lý</div>
                                 </div>
-                                <div class="action">Xem chi tiết</div>
+                                <div class="action" @click="viewDetail(item)">Xem chi tiết</div>
                             </li>
                         </ul>
                     </div>
@@ -153,4 +153,5 @@
         </div>
         
     </div>
+    <detailTrade></detailTrade>
 </div>
